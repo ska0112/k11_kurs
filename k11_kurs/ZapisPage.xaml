@@ -1,0 +1,55 @@
+﻿<Page x:Class="k11_kurs.ZapisPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:k11_kurs"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ZapisPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="dtgS" Grid.Row="0" Grid.Column="0"  AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название" Binding="{Binding Name_usl}"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding Price}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="dtgZ" Grid.Row="0" Grid.Column="1"  AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding idz}"/>
+                <DataGridTextColumn Header="Название услуги" Binding="{Binding Name_zap}"/>
+                <DataGridTextColumn Header="Дата" Binding="{Binding Date}"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding Price}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid Grid.Row="1" Grid.Column="0">
+            <TextBlock FontFamily="Verdana" Foreground="#152729" FontSize="20">Выберите услугу, а затем удобную <LineBreak/> для Вас дату  и номер для записи</TextBlock>
+            <TextBox x:Name="IDV" Background="#9ba9b4" FontFamily="Verdana" Foreground="#152729" Height="20" Width="110"  Grid.Row="1" BorderThickness="0" HorizontalAlignment="Left" Margin="0,0,0,50" ></TextBox>
+            <DatePicker Name="datePicker1" Width="200" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,80,0,0" SelectedDateFormat="Short" />
+            <Button HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,40" Name="ABT" Click="ABT_Click" Width="120"  Height="55" FontFamily="Verdana" FontSize="14" Foreground="#152729" Background="#19708c">Записаться</Button>
+            <Button HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="140,0,0,40" Name="BackBT" Click="BackBT_Click" Width="120"  Height="55" FontFamily="Verdana" FontSize="14" Foreground="#152729" Background="#19708c">Назад</Button>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,30,0,0" Name="DobBT" Click="DobBT_Click" Width="120"  Height="55" FontFamily="Verdana" FontSize="14" Foreground="#152729" Background="#19708c">
+                <TextBlock>Добавить <LineBreak/> 
+                    запись
+                </TextBlock>
+            </Button>
+            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,30,0,0" Name="DelBT" Click="DelBT_Click" Width="120"  Height="55" FontFamily="Verdana" FontSize="14" Foreground="#152729" Background="#19708c">
+                <TextBlock>Удалить <LineBreak/>
+                    запись
+                </TextBlock>
+            </Button>
+            <Button HorizontalAlignment="Center" VerticalAlignment="Center" Margin="120,30,0,0" Name="RBT" Click="RBT_Click" Width="120"  Height="55" FontFamily="Verdana" FontSize="14" Foreground="#152729" Background="#19708c">Обновить</Button>
+        </Grid>
+    </Grid>
+</Page>
